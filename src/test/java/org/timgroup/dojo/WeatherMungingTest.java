@@ -12,6 +12,6 @@ public class WeatherMungingTest {
     @Test
     public void weatherIsFine() {
         Stream<String> weatherLines = readLinesFrom("weather.dat");
-        assertThat(new WeatherMunging(weatherLines).dayWithTheSmallestTemperatureSpread(), is(14));
+        assertThat(WeatherMunging.dayWithTheSmallestTemperatureSpread(weatherLines), is(14));
     }
 }

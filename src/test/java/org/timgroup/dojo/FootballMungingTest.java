@@ -2,7 +2,6 @@ package org.timgroup.dojo;
 
 import fj.P2;
 import fj.data.Stream;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -10,16 +9,11 @@ import static org.junit.Assert.assertThat;
 import static org.timgroup.dojo.Files.readLinesFrom;
 
 public class FootballMungingTest {
-    private Stream<String> footballLines;
-
-    @Before
-    public void setup() {
-        footballLines = readLinesFrom("football.dat");
-    }
+    private final Stream<String> footballLines = readLinesFrom("football.dat");
 
     @Test
     public void teamWithSmallestDifferenceBetweenForAndAgainstIsAstonVilla() {
-        assertThat(new FootballMunging(footballLines).teamWithSmallestDifferenceBetweenForAndAgainst(), is("Aston_Villa"));
+        assertThat(FootballMunging.teamWithSmallestDifferenceBetweenForAndAgainst(footballLines), is("Aston_Villa"));
     }
 
     @Test

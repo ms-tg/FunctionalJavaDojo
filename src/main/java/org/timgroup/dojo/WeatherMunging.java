@@ -8,13 +8,7 @@ import static org.timgroup.dojo.FootballMunging.lineWithMinDiff;
 import static org.timgroup.dojo.FootballMunging.parseLine;
 
 public class WeatherMunging {
-    private final Stream<String> lines;
-
-    public WeatherMunging(Stream<String> lines) {
-        this.lines = lines;
-    }
-
-    public int dayWithTheSmallestTemperatureSpread() {
+    public static int dayWithTheSmallestTemperatureSpread(Stream<String> lines) {
         return Integer.valueOf(lineWithMinDiff(lines, new F<String, P2<Integer, String>>() {
             @Override public P2<Integer, String> f(String s) {
                 return parseWeatherLine(s);

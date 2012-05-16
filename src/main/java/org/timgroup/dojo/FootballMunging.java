@@ -10,13 +10,7 @@ import static fj.Ord.p2Ord;
 import static fj.P.p;
 
 public class FootballMunging {
-    private final Stream<String> lines;
-
-    public FootballMunging(Stream<String> lines) {
-        this.lines = lines;
-    }
-
-    public String teamWithSmallestDifferenceBetweenForAndAgainst() {
+    public static String teamWithSmallestDifferenceBetweenForAndAgainst(Stream<String> lines) {
         return lineWithMinDiff(lines, new F<String, P2<Integer, String>>() {
             @Override public P2<Integer, String> f(String s) {
                 return parseFootballLine(s);
