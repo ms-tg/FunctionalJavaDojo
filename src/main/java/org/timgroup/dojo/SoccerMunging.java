@@ -9,11 +9,11 @@ import static fj.Ord.stringOrd;
 import static fj.Ord.p2Ord;
 import static fj.P.p;
 
-public class FootballMunging {
+public class SoccerMunging {
     public static String teamWithSmallestDifferenceBetweenForAndAgainst(Stream<String> lines) {
         return lineWithMinDiff(lines, new F<String, P2<Integer, String>>() {
             @Override public P2<Integer, String> f(String s) {
-                return parseFootballLine(s);
+                return parseSoccerLine(s);
             }
         });
     }
@@ -34,7 +34,7 @@ public class FootballMunging {
         });
     }
 
-    public static P2<Integer, String> parseFootballLine(String line) {
+    public static P2<Integer, String> parseSoccerLine(String line) {
         return parseLine(line, 2, 7, 9);
     }
 

@@ -4,8 +4,8 @@ import fj.F;
 import fj.P2;
 import fj.data.Stream;
 
-import static org.timgroup.dojo.FootballMunging.lineWithMinDiff;
-import static org.timgroup.dojo.FootballMunging.parseLine;
+import static org.timgroup.dojo.SoccerMunging.lineWithMinDiff;
+import static org.timgroup.dojo.SoccerMunging.parseLine;
 
 public class WeatherMunging {
     public static int dayWithTheSmallestTemperatureSpread(Stream<String> lines) {
